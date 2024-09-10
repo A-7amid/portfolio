@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    transition: opacity 1.5s, visibility 1.5s;
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after {
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid #ddd;
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: loading 1.5s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+
+
+.nav {
+    @apply text-neutral-300 hover:text-white transition ease-out duration-200 pl-2 pb-6
+}
+
+
+
+.stroke-text {
+    color: black;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1.4px;
+    -webkit-text-stroke-color: black;
+}
+
+.divs {
+    @apply rounded-md shadow-md hover:shadow-lg transition duration-500
+}
+
+.titles {
+    @apply block text-sm font-medium text-gray-500 pb-5 pt-5 cursor-default
+}
+
+.imgs {
+    @apply size-5 cursor-pointer hover:text-stone-500 transition duration-200 ease-out
+}
+
+.skill {
+    @apply outline-dashed rounded-3xl outline-gray-300 outline-1 justify-center flex py-2 px-6 text-gray-900 hover:text-black transition duration-300
+}
+
+.contact {
+    @apply border-b-2 border-dashed focus:outline-none pb-4 focus:border-black transition duration-200
+}
+
+.phone {
+    @apply px-4 py-2 outline-dashed rounded-3xl outline-gray-300 outline-1 text-gray-900 hover:text-black transition duration-300
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: #2b323c;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container h1 {
+    font-size: 80px;
+    font-weight: 600;
+}
+
+html {
+    scroll-behavior: smooth;
+}
